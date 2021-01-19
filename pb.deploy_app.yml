@@ -13,11 +13,17 @@
 - name: Deploy Apps
   hosts: "{{ app_name }}"
   tasks:
-    - name: Load Varaibles
-      set_fact:
-        sudo_user: "{{app_mapping[app_name].sudo_user}}"
-        
-    - name: DEBUG
+    - name: Load App Varaibles
+      import_role:
+        name: load_app_vars
+
+    - name: DEBUG Groups Vars
       debug:
         msg:
           - "sudo_user: {{ sudo_user }}"
+          - "db_user: {{ db_user}}"
+
+    - name: DEBUG Groups Vars
+      debug:
+        msg:
+          - "ntp_server: {{ ntp_server }}"

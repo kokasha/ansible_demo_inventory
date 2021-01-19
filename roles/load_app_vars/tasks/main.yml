@@ -1,0 +1,4 @@
+- name: Initialize All Varaibles
+  set_fact:
+    sudo_user: "{{app_mapping[app_name].sudo_user}}"
+    db_uid: "{{app_mapping[app_name].db_uid}}"
