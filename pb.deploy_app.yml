@@ -1,0 +1,22 @@
+---
+- name: Validate all
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Validate Input Data
+      run_once: yes
+      assert:
+        that:
+          - app_name is defined
+        fail_msg: "Please include all required Parameters"
+
+- name: Deploy Apps
+  hosts: "{{ app_name }}"
+  tasks:
+    - name: Load Varaibles
+      set_fact:
+        sudo_user: "{{app_mapping[app_name].sudo_user}}"
+    - name: DEBUG
+      debug:
+        msg:
+          - "sudo_user: {{ sudo_user }}"
