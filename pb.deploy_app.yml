@@ -17,13 +17,20 @@
       import_role:
         name: load_app_vars
 
-    - name: DEBUG Groups Vars
+    - name: DEBUG Overalpping Groups Vars
       debug:
         msg:
           - "sudo_user: {{ sudo_user }}"
           - "db_uid: {{ db_uid }}"
 
     - name: DEBUG Groups Vars
+      when: app_name == 'app01'
       debug:
         msg:
-          - "ntp_server: {{ ntp_server }}"
+          - "mongo_db: {{ mongo_db }}"
+
+    - name: DEBUG Groups Vars
+      when: app_name == 'app02'
+      debug:
+        msg:
+          - "psql_db: {{ psql_db }}"
