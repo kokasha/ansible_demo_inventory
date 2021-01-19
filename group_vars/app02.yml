@@ -1,2 +1,3 @@
 ---
 psql_db: 'app02_psql_db'
+ntp_server: 'app02_ntp'

@@ -1,2 +1,3 @@
 ---
 mongo_db: 'app01_mongo_db'
+ntp_server: 'app01_ntp'

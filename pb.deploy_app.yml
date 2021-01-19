@@ -16,6 +16,7 @@
     - name: Load Varaibles
       set_fact:
         sudo_user: "{{app_mapping[app_name].sudo_user}}"
+        
     - name: DEBUG
       debug:
         msg:
