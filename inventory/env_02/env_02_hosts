@@ -1,0 +1,11 @@
+[app03]
+node03  ansible_host=192.168.0.124
+node04  ansible_host=192.168.0.125
+
+[app04]
+node03
+
+
+[all:vars]
+ansible_user=ansible
+sudo_password=ansible123

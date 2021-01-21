@@ -1,0 +1,7 @@
+app_mapping:
+  app03:
+    sudo_user: app03_user
+    db_uid: '1001'
+  app04:
+    sudo_user: app04_user
+    db_uid: '1002'

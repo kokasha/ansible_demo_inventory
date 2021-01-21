@@ -12,7 +12,7 @@
 
 - name: Deploy Apps
   hosts: "{{ app_name }}"
-  tasks:
+  tasks:    
     - name: Load App Varaibles
       import_role:
         name: load_app_vars
@@ -23,14 +23,14 @@
           - "sudo_user: {{ sudo_user }}"
           - "db_uid: {{ db_uid }}"
 
-    - name: DEBUG Groups Vars
-      when: app_name == 'app01'
-      debug:
-        msg:
-          - "mongo_db: {{ mongo_db }}"
+    # - name: DEBUG Groups Vars
+    #   when: mongo_db is defined
+    #   debug:
+    #     msg:
+    #       - "mongo_db: {{ mongo_db }}"
 
-    - name: DEBUG Groups Vars
-      when: app_name == 'app02'
-      debug:
-        msg:
-          - "psql_db: {{ psql_db }}"
+    # - name: DEBUG Groups Vars
+    #   when: psql_db is defined
+    #   debug:
+    #     msg:
+    #       - "psql_db: {{ psql_db }}"
