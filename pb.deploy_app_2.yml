@@ -1,0 +1,8 @@
+---
+- name: Deploy Apps
+  hosts: all
+  tasks:    
+    - name: DEBUG Overalpping Groups Vars
+      debug:
+        msg:
+          - "sudo_user: {{ sudo_user }}"
