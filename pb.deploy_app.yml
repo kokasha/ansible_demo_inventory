@@ -13,7 +13,9 @@
 - name: Deploy Apps
   hosts: "{{ app_name }}"
   tasks:
-    - debug: var=password    
+  
+    - debug: var=password
+
     - name: Load App Varaibles
       import_role:
         name: load_app_vars
